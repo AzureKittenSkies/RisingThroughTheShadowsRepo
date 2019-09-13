@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{C3244D49-E830-C800-CE51-EE30E75F13FB}</ProjectGuid>
+    <ProjectGuid>{BA6B8B33-3B92-1460-1B59-22A9671408B5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -60,16 +60,16 @@
      <Compile Include="Assets\Scripts\Technologies.cs" />
      <Compile Include="Assets\Scripts\Upgrades.cs" />
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>C:/Users/aaron.hayman4/Documents/Rising Through The Shadows/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>C:/Users/aaron.hayman4/Documents/RisingThroughTheShadowsRepo/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>C:/Users/aaron.hayman4/Documents/Rising Through The Shadows/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>C:/Users/aaron.hayman4/Documents/RisingThroughTheShadowsRepo/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>C:/Users/aaron.hayman4/Documents/Rising Through The Shadows/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>C:/Users/aaron.hayman4/Documents/RisingThroughTheShadowsRepo/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>C:/Users/aaron.hayman4/Documents/Rising Through The Shadows/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>C:/Users/aaron.hayman4/Documents/RisingThroughTheShadowsRepo/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

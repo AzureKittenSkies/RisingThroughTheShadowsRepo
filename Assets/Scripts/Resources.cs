@@ -31,11 +31,13 @@ namespace RisingThroughTheShadows
         public Resource magicalReagents = new Resource("Magical Reagents", 0f, "Eye of... maybe that's a newt? No, it's got too many heads...");
         public Resource junk = new Resource("Junk", 0f, "All kinds of things! One man's trash is another one's trash!");
         public Resource energy = new Resource("Energy", 0f, "Zap!");
+        public Resource runSpeed = new Resource("Run Speed", 0f, "Super speedy!");
 
         // T1 Resources
         public Resource foodstuff = new Resource("Foodstuff", 0f, "Soybean based consumables. When combined with lentils and green food dye, it makes a tasty... oh, never mind.");
         public Resource metalScrap = new Resource("Metal Scrap", 0f, "Chunks of wrecked vehicles and drones. Scorch marks and bullet holes included.");
         public Resource rareEarthMetals = new Resource("Rare Earth Metals", 0f, "Clumps of fancy metals with fancier names");
+        public Resource plastics = new Resource("Plastics", 0f, "This stuff is everywhere!");
 
         // T2 Resources
         public Resource explosives = new Resource("Explosives", 0f, "The easiest way to turn a big thing into a lot of little things");

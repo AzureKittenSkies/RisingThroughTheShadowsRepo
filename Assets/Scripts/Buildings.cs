@@ -93,6 +93,23 @@ namespace RisingThroughTheShadows
             new Dictionary<string, float> { { "Basic Circuitry", 0.2f }, { "Rare Earth Metals", 0.5f }, { "Nuyen", 1.5f } },
             new Dictionary<string, float> { { "Microprocessors", 0.05f } });
 
+        public Building fuelGenerator = new Building("Fuel Generator", 0, "Best way to stop clutter is just burning it!", false,
+            new Dictionary<string, float> { { "Composite Metal", 75f }, { "Steel", 125f } },
+            new Dictionary<string, float> { { "Junk", 5f } },
+            new Dictionary<string, float> { { "Energy", 10f } });
+
+        public Building vehicleWorkshop = new Building("Vehicle Workshop", 0, "Vehicular assembly lines", false,
+            new Dictionary<string, float> { { "Metal Scrap", 100f }, { "Nuyen", 75 } },
+            new Dictionary<string, float> { { "Metal Scrap", 0.5f }, { "Steel", 0.75f }, { "Composite Metal", 0.25f } },
+            new Dictionary<string, float> { { "Run Speed", 1f } });
+
+        public Building recycler = new Building("Recyler", 0, " ", false,
+            new Dictionary<string, float> { { "Metal Scrap", 125f } },
+            new Dictionary<string, float> { { "Junk", 1f } },
+            new Dictionary<string, float> { { "Plastic", 0.5f } });
+
+        
+
         // not sure how to handle storage upgrades and/or housing
 
         
@@ -114,4 +131,3 @@ namespace RisingThroughTheShadows
         }
     }
 }
-s
