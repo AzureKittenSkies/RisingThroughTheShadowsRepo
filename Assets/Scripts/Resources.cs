@@ -32,6 +32,7 @@ namespace RisingThroughTheShadows
         public Resource junk = new Resource("Junk", 0f, "All kinds of things! One man's trash is another one's trash!");
         public Resource energy = new Resource("Energy", 0f, "Zap!");
         public Resource runSpeed = new Resource("Run Speed", 0f, "Super speedy!");
+        public Resource science = new Resource("Science", 0f, "Science, bitch!");
 
         // T1 Resources
         public Resource foodstuff = new Resource("Foodstuff", 0f, "Soybean based consumables. When combined with lentils and green food dye, it makes a tasty... oh, never mind.");

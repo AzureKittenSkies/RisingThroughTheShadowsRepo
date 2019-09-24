@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -163,6 +163,13 @@ namespace RisingThroughTheShadows
             new Dictionary<string, float> { { "Metal Scrap", 50f }, { "Steel", 25f }, { "Basic Circuitry", 15f } },
             new Dictionary<string, float> { { "Medkit", 5f }, { "Firearms", 3f }, { "Bullets", 150f }, { "Flak Jackets", 2f } },
             new Dictionary<string, float> { { "Combat Kit", 1f } });
+
+        public Building basicResearchBench = new Building("Basic Research Bench", 0, "TBA", 1.15f, false, true,
+            new Dictionary<string, float> { { "Junk", 150f }, { "Rare Earth Metals", 150f }, { "Metal Scrap", 150f } },
+            new Dictionary<string, float> { { "Junk", 0.5f } },
+            new Dictionary<string, float> { { "Science", 0.2f } });
+
+
 
 
         // Storage Buildings

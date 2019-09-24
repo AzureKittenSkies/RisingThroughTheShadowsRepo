@@ -8,18 +8,20 @@ public class Technologies : MonoBehaviour
     public class Science
     {
         public string scienceName;
-        public int researchCost;
-        public int nuyenCost;
+        public Dictionary<string, float> researchCost;
+        
 
         public bool unlocked = false;
 
         public string scienceToolTip;
 
-        public Science(string name, int science, int cost)
+        public Science(string name, Dictionary<string,float> cost, string tooltip)
         {
             scienceName = name;
-            researchCost = science;
-            nuyenCost = cost;
+            researchCost = cost;
+            scienceToolTip = tooltip;
+
+
         }
 
 
