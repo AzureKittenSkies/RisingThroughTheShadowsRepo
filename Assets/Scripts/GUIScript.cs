@@ -50,7 +50,7 @@ namespace RisingThroughTheShadows
 
         #endregion
 
-
+        public Resources resourceScript;
 
 
 
@@ -98,8 +98,21 @@ namespace RisingThroughTheShadows
                 // Top menu bar
                 GUI.Box(new Rect(0, 0, Screen.width, scrY * 0.75f), "Top bar box");
 
+                #region Resource box
                 // Resource container
                 GUI.Box(new Rect(0, scrY * 0.75f, scrX * 2.5f, scrY * 8.25f), "Resource box");
+
+                foreach (var Resource in resourceScript)
+                {
+                    if (Resource.amount > 0)
+                    {
+
+                    }
+                }
+
+
+
+                #endregion
 
                 // Run Status and Feed
                 GUI.Box(new Rect(scrX * 13.5f, scrY * 0.75f, scrX * 2.5f, scrY * 6f), "Run Status and Feed");

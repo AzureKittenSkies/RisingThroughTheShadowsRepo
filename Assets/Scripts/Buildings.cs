@@ -73,7 +73,7 @@ namespace RisingThroughTheShadows
 
         }
 
-
+        #region Buildings
         public Building metalSalvagingTable = new Building("Metal Salvaging Table", 0, "Separating the metal wheat from the rest of that weird stuff", 1.15f, false,
             new Dictionary<string, float> { { "Nuyen", 100f }, { "Metal Scrap", 50f } },
             new Dictionary<string, float> { { "Junk", 1f } },
@@ -193,7 +193,7 @@ namespace RisingThroughTheShadows
             new Dictionary<string, float> { { "Junk", 5f } },
             new Dictionary<string, float> { { "Energy", 10f } });
 
-
+        #endregion
 
 
         // Use this for initialization

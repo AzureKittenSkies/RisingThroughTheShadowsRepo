@@ -8,13 +8,14 @@ public class Upgrades : MonoBehaviour
     public class Upgrade
     {
         public string upgradeName;
-        public int researchCost;
+        public Dictionary<string, float> researchCost;
+        
         
 
-        public Upgrade(string name, int science)
+        public Upgrade(string name, Dictionary<string, float> cost)
         {
             upgradeName = name;
-            researchCost = science;
+            researchCost = cost;
         }
 
 
