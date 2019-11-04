@@ -102,13 +102,13 @@ namespace RisingThroughTheShadows
                 // Resource container
                 GUI.Box(new Rect(0, scrY * 0.75f, scrX * 2.5f, scrY * 8.25f), "Resource box");
 
-                foreach (var Resource in resourceScript)
-                {
-                    if (Resource.amount > 0)
-                    {
+                //foreach (var Resource in resourceScript)
+                //{
+                //    if (Resource.amount > 0)
+                //    {
 
-                    }
-                }
+                //    }
+                //}
 
 
 

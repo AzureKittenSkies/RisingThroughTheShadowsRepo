@@ -129,7 +129,7 @@ namespace RisingThroughTheShadows
             new Dictionary<string, float> { { "Metal Scrap", 0.5f }, { "Steel", 0.75f }, { "Composite Metal", 0.25f } },
             new Dictionary<string, float> { { "Run Speed", 1f } });
 
-        public Building recycler = new Building("Recyler", 0, " ", 1.15f, false,
+        public Building recycler = new Building("Recyler", 0, "TBA", 1.15f, false,
             new Dictionary<string, float> { { "Metal Scrap", 125f } },
             new Dictionary<string, float> { { "Junk", 1f } },
             new Dictionary<string, float> { { "Plastic", 0.5f } });

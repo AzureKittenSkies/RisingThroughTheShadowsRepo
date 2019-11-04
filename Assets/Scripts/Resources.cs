@@ -80,7 +80,13 @@ namespace RisingThroughTheShadows
         // Update is called once per frame
         void Update()
         {
-
+            if (Time.deltaTime%5 == 0)
+            {
+                foreach (Resource resource in Resources)
+                {
+                 
+                }
+            }
         }
 
     }
