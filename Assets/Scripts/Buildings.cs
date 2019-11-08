@@ -1,4 +1,4 @@
-﻿    using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -124,11 +124,6 @@ namespace RisingThroughTheShadows
             new Dictionary<string, float> { { "Basic Circuitry", 0.2f }, { "Rare Earth Metals", 0.5f }, { "Nuyen", 1.5f } },
             new Dictionary<string, float> { { "Microprocessors", 0.05f } });
 
-        public Building vehicleWorkshop = new Building("Vehicle Workshop", 0, "Vehicular assembly lines", 1.15f, false,
-            new Dictionary<string, float> { { "Metal Scrap", 100f }, { "Nuyen", 75 } },
-            new Dictionary<string, float> { { "Metal Scrap", 0.5f }, { "Steel", 0.75f }, { "Composite Metal", 0.25f } },
-            new Dictionary<string, float> { { "Run Speed", 1f } });
-
         public Building recycler = new Building("Recyler", 0, "TBA", 1.15f, false,
             new Dictionary<string, float> { { "Metal Scrap", 125f } },
             new Dictionary<string, float> { { "Junk", 1f } },
@@ -174,8 +169,8 @@ namespace RisingThroughTheShadows
 
         // Storage Buildings
         public Building backRoomStorage = new Building("Back Room Storage", 0, "We can move some stuff around to make more space...", 1.15f, false,
-            new Dictionary<string, float> { { "Nuyen", 150f} },
-            new Dictionary<string, float> { { "Metal Scrap", 50f}});
+            new Dictionary<string, float> { { "Nuyen", 150f } },
+            new Dictionary<string, float> { { "Metal Scrap", 50f } });
 
         public Building warehouse = new Building("Warehouse", 0, "Build yourself your very own shack to put things in", 1.15f, false,
             new Dictionary<string, float> { { "Metal Scrap", 100f }, { "Steel", 50f } },
@@ -187,12 +182,16 @@ namespace RisingThroughTheShadows
 
 
 
-        // Power production
+        // "Static" production
         public Building fuelGenerator = new Building("Fuel Generator", 0, "Best way to stop clutter is to burn it!", 1.15f, false,
             new Dictionary<string, float> { { "Composite MEtal", 75f }, { "Steel", 125f } },
             new Dictionary<string, float> { { "Junk", 5f } },
             new Dictionary<string, float> { { "Energy", 10f } });
 
+        public Building vehicleWorkshop = new Building("Vehicle Workshop", 0, "Vehicular assembly lines", 1.15f, false,
+            new Dictionary<string, float> { { "Metal Scrap", 100f }, { "Nuyen", 75 } },
+            new Dictionary<string, float> { { "Metal Scrap", 0.5f }, { "Steel", 0.75f }, { "Composite Metal", 0.25f } },
+            new Dictionary<string, float> { { "Run Speed", 1f } });
         #endregion
 
 

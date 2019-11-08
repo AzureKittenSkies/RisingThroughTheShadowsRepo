@@ -50,9 +50,18 @@ namespace RisingThroughTheShadows
 
         #endregion
 
+        #region Tick Timer
+        public float timer = 0f;
+        public int dayCounter = 0;
+        public float tickTimer = 0.2f;
+        public bool canRunTick = true;
+        #endregion
+
+
+        #region Scripts
         public Resources resourceScript;
-
-
+        public Buildings buildingScript;
+        #endregion
 
         // Use this for initialization
         void Start()
@@ -65,6 +74,142 @@ namespace RisingThroughTheShadows
         {
             scrX = Screen.width / 16f;
             scrY = Screen.height / 9f;
+
+
+
+            if (canRunTick)
+            {
+                canRunTick = false;
+                //StartCoroutine(ResourceTick);
+            }
+
+
+        }
+
+        private IEnumerator ResourceTick()
+        {
+            // T0 Resource
+            if (resourceScript.nuyen.getUnlocked())
+            {
+                
+            }
+            if (resourceScript.magicalReagents.getUnlocked())
+            {
+                resourceScript.magicalReagents.amount += (0.5f * buildingScript.magicalSalvagingTable.amount) - (0.75f * buildingScript.transmutationStation.amount + 0.2f * buildingScript.magicalRefinery.amount);
+            }
+            if (resourceScript.junk.getUnlocked())
+            {
+
+            }
+            if (resourceScript.energy.getUnlocked())
+            {
+                resourceScript.energy.amount += (10f * buildingScript.fuelGenerator.amount);
+            }
+            if (resourceScript.runSpeed.getUnlocked())
+            {
+                // static increase
+            }
+            if (resourceScript.science.getUnlocked())
+            {
+                resourceScript.science.amount += (0.2f * buildingScript.basicResearchBench.amount);
+            }
+
+            // T1 Resources
+            if (resourceScript.foodstuff.getUnlocked())
+            {
+                resourceScript.foodstuff.amount += (0.25f * buildingScript.nutrientDispenser.amount);
+            }
+            if (resourceScript.metalScrap.getUnlocked())
+            {
+                resourceScript.metalScrap.amount += (0.5f * buildingScript.metalSalvagingTable.amount);
+            }
+            if (resourceScript.rareEarthMetals.getUnlocked())
+            {
+                resourceScript.rareEarthMetals.amount += (0.3f * buildingScript.metalSalvagingTable.amount);
+            }
+            if (resourceScript.plastics.getUnlocked())
+            {
+                resourceScript.plastics.amount += (0.5f * buildingScript.recycler.amount);
+            }
+
+            // T2 Resources
+            if (resourceScript.explosives.getUnlocked())
+            {
+                resourceScript.explosives.amount += (0.1f * buildingScript.transmutationStation.amount) - (5f * buildingScript.ammunitionMill.amount);
+            }
+            if (resourceScript.arcaneIngredients.getUnlocked())
+            {
+
+            }
+            if (resourceScript.steel.getUnlocked())
+            {
+
+            }
+            if (resourceScript.compositeMetal.getUnlocked())
+            {
+
+            }
+            if (resourceScript.basicBlades.getUnlocked())
+            {
+
+            }
+
+            // T3 Resources
+            if (resourceScript.basicCircuitry.getUnlocked())
+            {
+
+            }
+            if (resourceScript.flakJackets.getUnlocked())
+            {
+
+            }
+            if (resourceScript.medkits.getUnlocked())
+            {
+
+            }
+            if (resourceScript.bullets.getUnlocked())
+            {
+
+            }
+
+            // T4 Resources
+            if (resourceScript.drones.getUnlocked())
+            {
+
+            }
+            if (resourceScript.microprocessors.getUnlocked())
+            {
+
+            }
+            if (resourceScript.firearms.getUnlocked())
+            {
+
+            }
+
+            // T5 Resources
+            if (resourceScript.cyberwear.getUnlocked())
+            {
+
+            }
+            if (resourceScript.combatDrones.getUnlocked())
+            {
+
+            }
+            if (resourceScript.combatKit.getUnlocked())
+            {
+
+            }
+
+            // T6 Resources
+            if (resourceScript.microdrones.getUnlocked())
+            {
+
+            }
+
+
+            canRunTick = true;
+            yield return new WaitForSeconds(0.2f);
+
         }
 
 
