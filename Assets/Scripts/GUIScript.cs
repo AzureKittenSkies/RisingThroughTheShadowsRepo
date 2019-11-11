@@ -91,63 +91,63 @@ namespace RisingThroughTheShadows
             // T0 Resource
             if (resourceScript.nuyen.getUnlocked())
             {
-                
+                resourceScript.nuyen.amount += -(buildingScript.nutrientDispenser.resourceConsumption["Nuyen"] * buildingScript.nutrientDispenser.amount);
             }
+
             if (resourceScript.magicalReagents.getUnlocked())
             {
-                resourceScript.magicalReagents.amount += (0.5f * buildingScript.magicalSalvagingTable.amount) - (0.75f * buildingScript.transmutationStation.amount + 0.2f * buildingScript.magicalRefinery.amount);
+                resourceScript.magicalReagents.amount += (buildingScript.magicalSalvagingTable.resourceProduction["Magical Reagents"] * buildingScript.magicalSalvagingTable.amount) - (buildingScript.transmutationStation.resourceConsumption["Magical Reagents"] * buildingScript.transmutationStation.amount + buildingScript.magicalRefinery.resourceConsumption["Magical Reagents"] * buildingScript.magicalRefinery.amount);
             }
+
             if (resourceScript.junk.getUnlocked())
             {
-
+                resourceScript.junk.amount += -(buildingScript.metalSalvagingTable.resourceConsumption["Junk"] * buildingScript.metalSalvagingTable.amount + buildingScript.magicalSalvagingTable.resourceConsumption["Junk"] * buildingScript.metalSalvagingTable.amount + buildingScript.recycler.resourceConsumption["Junk"] * buildingScript.recycler.amount + buildingScript.basicResearchBench.resourceConsumption["Junk"] * buildingScript.basicResearchBench.amount);
             }
+
             if (resourceScript.energy.getUnlocked())
             {
-                resourceScript.energy.amount += (10f * buildingScript.fuelGenerator.amount);
-            }
-            if (resourceScript.runSpeed.getUnlocked())
-            {
-                // static increase
+                resourceScript.energy.amount += (buildingScript.fuelGenerator.resourceProduction["Energy"] * buildingScript.fuelGenerator.amount) - (buildingScript.weaponsmith.resourceConsumption["Energy"] * buildingScript.weaponsmith.amount);
             }
             if (resourceScript.science.getUnlocked())
             {
-                resourceScript.science.amount += (0.2f * buildingScript.basicResearchBench.amount);
+                resourceScript.science.amount += (buildingScript.basicResearchBench.resourceProduction["Science"] * buildingScript.basicResearchBench.amount);
             }
 
             // T1 Resources
             if (resourceScript.foodstuff.getUnlocked())
             {
-                resourceScript.foodstuff.amount += (0.25f * buildingScript.nutrientDispenser.amount);
+                resourceScript.foodstuff.amount += (buildingScript.nutrientDispenser.resourceProduction["Foodstuff"] * buildingScript.nutrientDispenser.amount);
             }
             if (resourceScript.metalScrap.getUnlocked())
             {
-                resourceScript.metalScrap.amount += (0.5f * buildingScript.metalSalvagingTable.amount);
+                resourceScript.metalScrap.amount += (buildingScript.metalSalvagingTable.resourceProduction["Metal Scrap"] * buildingScript.metalSalvagingTable.amount) - (buildingScript.smeltery.resourceConsumption["Metal Scrap"] * buildingScript.smeltery.amount + buildingScript.armory.resourceConsumption["Metal Scrap"] * buildingScript.armory.amount);
             }
             if (resourceScript.rareEarthMetals.getUnlocked())
             {
-                resourceScript.rareEarthMetals.amount += (0.3f * buildingScript.metalSalvagingTable.amount);
+                resourceScript.rareEarthMetals.amount += (buildingScript.metalSalvagingTable.resourceProduction["Rare Earth Metals"] * buildingScript.metalSalvagingTable.amount) - (buildingScript.electronicsAssembly.resourceConsumption["Rare Earth Metals"] * buildingScript.electronicsAssembly.amount + buildingScript.electronicsAssemblyMicroprocessor.resourceConsumption["Rare Earth Metals"] * buildingScript.electronicsAssemblyMicroprocessor.amount);
             }
             if (resourceScript.plastics.getUnlocked())
             {
                 resourceScript.plastics.amount += (0.5f * buildingScript.recycler.amount);
+
             }
 
             // T2 Resources
             if (resourceScript.explosives.getUnlocked())
             {
-                resourceScript.explosives.amount += (0.1f * buildingScript.transmutationStation.amount) - (5f * buildingScript.ammunitionMill.amount);
+                resourceScript.explosives.amount += (buildingScript.transmutationStation.resourceProduction["Explosives"] * buildingScript.transmutationStation.amount) - (buildingScript.ammunitionMill.resourceConsumption["Explosives"] * buildingScript.ammunitionMill.amount);
             }
             if (resourceScript.arcaneIngredients.getUnlocked())
             {
-
+                resourceScript.arcaneIngredients.amount += (buildingScript.magicalRefinery.resourceProduction["Arcane Ingredients"] * buildingScript.magicalRefinery.amount);
             }
             if (resourceScript.steel.getUnlocked())
             {
-
+                resourceScript.steel.amount += (buildingScript.smeltery.resourceProduction["Steel"] * buildingScript.smeltery.amount) - (buildingScript.smeltery.resourceConsumption["Steel"] * buildingScript.smeltery.amount + buildingScript.ammunitionMill.resourceConsumption["Steel"] * buildingScript.smeltery.amount);
             }
             if (resourceScript.compositeMetal.getUnlocked())
             {
-
+                resourceScript.compositeMetal.amount += (buildingScript.smeltery.resourceProduction["Composite Metal"] * buildingScript.smeltery.amount);
             }
             if (resourceScript.basicBlades.getUnlocked())
             {
@@ -157,7 +157,7 @@ namespace RisingThroughTheShadows
             // T3 Resources
             if (resourceScript.basicCircuitry.getUnlocked())
             {
-
+                resourceScript.basicCircuitry.amount += (buildingScript.electronicsAssembly.resourceProduction["Basic Circuitry"] * buildingScript.electronicsAssembly.amount) - (buildingScript.droneFactory.resourceConsumption["Basic Circuitry"] * buildingScript.droneFactory.amount);
             }
             if (resourceScript.flakJackets.getUnlocked())
             {
@@ -165,11 +165,11 @@ namespace RisingThroughTheShadows
             }
             if (resourceScript.medkits.getUnlocked())
             {
-
+                
             }
             if (resourceScript.bullets.getUnlocked())
             {
-
+                resourceScript.bullets.amount += (buildingScript.ammunitionMill.resourceProduction["Bullets"] * buildingScript.ammunitionMill.amount);
             }
 
             // T4 Resources
@@ -231,7 +231,7 @@ namespace RisingThroughTheShadows
                 if (GUI.Button(new Rect(scrX * 10f, scrY * 5.5f, scrX * 2.5f, scrY * 1f), "Exit Game"))
                 {
 #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
+                    UnityEditor.EditorApplication.isPlaying = false;
 #else
 
                     Application.Quit();
@@ -518,7 +518,7 @@ namespace RisingThroughTheShadows
                     if (GUI.Button(new Rect(scrX * 7f, scrY * 7.5f, scrX * 2.5f, scrY * 1f), "Exit"))
                     {
 #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
+                        UnityEditor.EditorApplication.isPlaying = false;
 #else
 
                         Application.Quit();
