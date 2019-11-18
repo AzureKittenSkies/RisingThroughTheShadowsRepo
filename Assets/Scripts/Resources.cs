@@ -30,14 +30,14 @@ namespace RisingThroughTheShadows
             }
 
             
-            
+           
         }
-
+        
 
 
         #region Resources
         // T0 resources
-        public Resource nuyen = new Resource("Nuyen", 0f, "The green of the future!", true);
+        public Resource nuyen = new Resource("Nuyen", 5000f, "The green of the future!", true);
         public Resource magicalReagents = new Resource("Magical Reagents", 0f, "Eye of... maybe that's a newt? No, it's got too many heads...", false);
         public Resource junk = new Resource("Junk", 0f, "All kinds of things! One man's trash is another one's trash!", false);
         public Resource energy = new Resource("Energy", 0f, "Zap!", false);
@@ -49,7 +49,7 @@ namespace RisingThroughTheShadows
         public Resource foodstuff = new Resource("Foodstuff", 0f, "Soybean based consumables. When combined with lentils and green food dye, it makes a tasty... oh, never mind.", false);
         public Resource metalScrap = new Resource("Metal Scrap", 0f, "Chunks of wrecked vehicles and drones. Scorch marks and bullet holes included.", false);
         public Resource rareEarthMetals = new Resource("Rare Earth Metals", 0f, "Clumps of fancy metals with fancier names", false);
-        public Resource plastics = new Resource("Plastics", 0f, "This stuff is everywhere!", false);
+        public Resource plastic = new Resource("Plastic", 0f, "This stuff is everywhere!", false);
 
         // T2 Resources
         public Resource explosives = new Resource("Explosives", 0f, "The easiest way to turn a big thing into a lot of little things", false);

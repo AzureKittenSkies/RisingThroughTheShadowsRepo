@@ -80,7 +80,7 @@ namespace RisingThroughTheShadows
             if (canRunTick)
             {
                 canRunTick = false;
-                //StartCoroutine(ResourceTick);
+                StartCoroutine("ResourceTick");
             }
 
 
@@ -93,17 +93,14 @@ namespace RisingThroughTheShadows
             {
                 resourceScript.nuyen.amount += -(buildingScript.nutrientDispenser.resourceConsumption["Nuyen"] * buildingScript.nutrientDispenser.amount);
             }
-
             if (resourceScript.magicalReagents.getUnlocked())
             {
                 resourceScript.magicalReagents.amount += (buildingScript.magicalSalvagingTable.resourceProduction["Magical Reagents"] * buildingScript.magicalSalvagingTable.amount) - (buildingScript.transmutationStation.resourceConsumption["Magical Reagents"] * buildingScript.transmutationStation.amount + buildingScript.magicalRefinery.resourceConsumption["Magical Reagents"] * buildingScript.magicalRefinery.amount);
             }
-
             if (resourceScript.junk.getUnlocked())
             {
                 resourceScript.junk.amount += -(buildingScript.metalSalvagingTable.resourceConsumption["Junk"] * buildingScript.metalSalvagingTable.amount + buildingScript.magicalSalvagingTable.resourceConsumption["Junk"] * buildingScript.metalSalvagingTable.amount + buildingScript.recycler.resourceConsumption["Junk"] * buildingScript.recycler.amount + buildingScript.basicResearchBench.resourceConsumption["Junk"] * buildingScript.basicResearchBench.amount);
             }
-
             if (resourceScript.energy.getUnlocked())
             {
                 resourceScript.energy.amount += (buildingScript.fuelGenerator.resourceProduction["Energy"] * buildingScript.fuelGenerator.amount) - (buildingScript.weaponsmith.resourceConsumption["Energy"] * buildingScript.weaponsmith.amount);
@@ -126,10 +123,9 @@ namespace RisingThroughTheShadows
             {
                 resourceScript.rareEarthMetals.amount += (buildingScript.metalSalvagingTable.resourceProduction["Rare Earth Metals"] * buildingScript.metalSalvagingTable.amount) - (buildingScript.electronicsAssembly.resourceConsumption["Rare Earth Metals"] * buildingScript.electronicsAssembly.amount + buildingScript.electronicsAssemblyMicroprocessor.resourceConsumption["Rare Earth Metals"] * buildingScript.electronicsAssemblyMicroprocessor.amount);
             }
-            if (resourceScript.plastics.getUnlocked())
+            if (resourceScript.plastic.getUnlocked())
             {
-                resourceScript.plastics.amount += (0.5f * buildingScript.recycler.amount);
-
+                resourceScript.plastic.amount += (buildingScript.recycler.resourceProduction["Plastic"] * buildingScript.recycler.amount);
             }
 
             // T2 Resources
@@ -149,10 +145,7 @@ namespace RisingThroughTheShadows
             {
                 resourceScript.compositeMetal.amount += (buildingScript.smeltery.resourceProduction["Composite Metal"] * buildingScript.smeltery.amount);
             }
-            if (resourceScript.basicBlades.getUnlocked())
-            {
 
-            }
 
             // T3 Resources
             if (resourceScript.basicCircuitry.getUnlocked())
@@ -161,11 +154,11 @@ namespace RisingThroughTheShadows
             }
             if (resourceScript.flakJackets.getUnlocked())
             {
-
+                resourceScript.flakJackets.amount += (buildingScript.armory.resourceProduction["Flak Jacket"] * buildingScript.armory.amount) - (buildingScript.armoryCombatKit.resourceConsumption["Flak Jacket"] * buildingScript.armoryCombatKit.amount);
             }
             if (resourceScript.medkits.getUnlocked())
             {
-                
+                resourceScript.medkits.amount += (buildingScript.medicalLab.resourceProduction["Medkit"] * buildingScript.medicalLab.amount) - (buildingScript.armoryCombatKit.resourceConsumption["Medkit"] * buildingScript.armoryCombatKit.amount);
             }
             if (resourceScript.bullets.getUnlocked())
             {
@@ -175,35 +168,35 @@ namespace RisingThroughTheShadows
             // T4 Resources
             if (resourceScript.drones.getUnlocked())
             {
-
+                resourceScript.drones.amount += (buildingScript.droneFactory.resourceProduction["Drones"] * buildingScript.droneFactory.amount);
             }
             if (resourceScript.microprocessors.getUnlocked())
             {
-
+                resourceScript.microprocessors.amount += (buildingScript.electronicsAssemblyMicroprocessor.resourceProduction["Microprocessors"] * buildingScript.electronicsAssemblyMicroprocessor.amount);
             }
             if (resourceScript.firearms.getUnlocked())
             {
-
+                resourceScript.firearms.amount += (buildingScript.weaponsmith.resourceProduction["Firearms"] * buildingScript.weaponsmith.amount) - (buildingScript.droneFactoryCombatDrones.resourceConsumption["Firearms"] * buildingScript.droneFactoryCombatDrones.amount + buildingScript.armoryCombatKit.resourceConsumption["Firearms"] * buildingScript.armoryCombatKit.amount);
             }
 
             // T5 Resources
             if (resourceScript.cyberwear.getUnlocked())
             {
-
+                resourceScript.cyberwear.amount += (buildingScript.augmentationManufactory.resourceProduction["Cyberwear"] * buildingScript.augmentationManufactory.amount);
             }
             if (resourceScript.combatDrones.getUnlocked())
             {
-
+                resourceScript.combatDrones.amount += (buildingScript.droneFactoryCombatDrones.resourceProduction["Combat Drones"] * buildingScript.droneFactoryCombatDrones.amount);
             }
             if (resourceScript.combatKit.getUnlocked())
             {
-
+                resourceScript.combatKit.amount += (buildingScript.armoryCombatKit.resourceProduction["Combat Kit"] * buildingScript.armoryCombatKit.amount);
             }
 
             // T6 Resources
             if (resourceScript.microdrones.getUnlocked())
             {
-
+                resourceScript.microdrones.amount += (buildingScript.droneFactoryMicrodrones.resourceProduction["Microdrones"] * buildingScript.droneFactoryCombatDrones.amount);
             }
 
 
@@ -247,14 +240,13 @@ namespace RisingThroughTheShadows
                 // Resource container
                 GUI.Box(new Rect(0, scrY * 0.75f, scrX * 2.5f, scrY * 8.25f), "Resource box");
 
-                //foreach (var Resource in resourceScript)
+                //foreach (Resources.Resource resource in Resources.Resource)
                 //{
-                //    if (Resource.amount > 0)
+                //    if (resource.amount > 0)
                 //    {
 
                 //    }
                 //}
-
 
 
                 #endregion

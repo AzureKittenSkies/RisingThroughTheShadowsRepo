@@ -124,49 +124,55 @@ namespace RisingThroughTheShadows
             new Dictionary<string, float> { { "Junk", 1f } },
             new Dictionary<string, float> { { "Plastic", 0.5f } });
 
+        public Building medicalLab = new Building("Medical Lab", 0, "Magical vials of magical healing", 1.15f, false,
+            new Dictionary<string, float> { { "Steel", 150f }, { "Arcane Ingredients", 75f }, { "Nuyen", 250f } },
+            new Dictionary<string, float> { { "Magical Reagents", 5f }, { "Arcane Ingredients", 3f }, { "Foodstuff", 2f } },
+            new Dictionary<string, float> { { "Medkit", 0.2f } });
 
         public Building ammunitionMill = new Building("Ammunition Mill", 0, "Churing out bullets like a belt fed HMG", 1.5f, false,
             new Dictionary<string, float> { { "Steel", 50f }, { "Metal Scrap", 100f }, { "Basic Circuitry", 50f } },
             new Dictionary<string, float> { { "Steel", 2.5f }, { "Explosives", 5f } },
             new Dictionary<string, float> { { "Bullets", 5f } });
 
-        // "Single" item crafts
-        public Building simpleBladePress = new Building("Simple Blade Press", 0, "Anything can be a weapon if you swing it right", 1.15f, false, true,
-            new Dictionary<string, float> { { "Metal Scrap", 50f } },
-            new Dictionary<string, float> { { "Metal Scrap", 15f } },
-            new Dictionary<string, float> { { "Basic Blades", 1f } });
-
-        public Building armory = new Building("Armory", 0, "Equipping you with the best (that we've got)!", 1.15f, false, true,
-            new Dictionary<string, float> { { "Steel", 100f }, { "Basic Circuitry", 100f }, { "Composite Metal", 150f } },
-            new Dictionary<string, float> { { "Composite Metal", 25f }, { "Metal Scrap", 10f } },
-            new Dictionary<string, float> { { "Flak Jacket", 1f } });
-
-        public Building augmentationManufactory = new Building("Augmentation Manufactory", 0, "Upgrades, upgrades, upgrades!", 1.15f, false, true,
-            new Dictionary<string, float> { { "Steel", 150f }, { "Basic Circuitry", 200f }, { "Microprocessors", 150f } },
-            new Dictionary<string, float> { { "Steel", 10f }, { "Composite Metal", 17.5f }, { "Microprocessors", 25f } },
-            new Dictionary<string, float> { { "Cyberwear", 1f } });
-
-        public Building droneFactoryCombatDrones = new Building("Drone Factory", 0, "The robots rise!", 1.15f, false, true,
-            new Dictionary<string, float> { { "Metal Scrap", 200f }, { "Steel", 200f }, { "Basic Circuitry", 150f } },
-            new Dictionary<string, float> { { "Drones", 5f }, { "Firearms", 5f }, { "Bullets", 25f }, { "Composite Metal", 25 }, { "Energy", 7.5f } },
-            new Dictionary<string, float> { { "Combat Drones", 1f } });
-
-        public Building weaponsmith = new Building("Weaponsmith", 0, "The ring of metal hitting metal; turning molten steel into weapons", 1.15f, false, true,
-            new Dictionary<string, float> { { "Metal Scrap", 200f }, { "Steel", 250f } },
-            new Dictionary<string, float> { { "Bullets", 100f }, { "Metal Scrap", 10f }, { "Composite Metal", 25f }, { "Energy", 2.5f } },
-            new Dictionary<string, float> { { "Firearms", 1 } });
-
-        public Building armoryCombatKit = new Building("Armory", 0, "Equipping you with the best (that we've got)!", 1.15f, false, true,
+        public Building armoryCombatKit = new Building("Armory", 0, "Equipping you with the best (that we've got)!", 1.15f, false,
             new Dictionary<string, float> { { "Metal Scrap", 50f }, { "Steel", 25f }, { "Basic Circuitry", 15f } },
-            new Dictionary<string, float> { { "Medkit", 5f }, { "Firearms", 3f }, { "Bullets", 150f }, { "Flak Jackets", 2f } },
+            new Dictionary<string, float> { { "Medkit", 1f }, { "Firearms", 0.6f }, { "Bullets", 30f }, { "Flak Jackets", 0.4f } },
             new Dictionary<string, float> { { "Combat Kit", 1f } });
 
-        public Building basicResearchBench = new Building("Basic Research Bench", 0, "TBA", 1.15f, false, true,
+        public Building simpleBladePress = new Building("Simple Blade Press", 0, "Anything can be a weapon if you swing it right", 1.15f, false,
+            new Dictionary<string, float> { { "Metal Scrap", 10f } },
+            new Dictionary<string, float> { { "Metal Scrap", 3f } },
+            new Dictionary<string, float> { { "Basic Blades", 0.2f } });
+
+        public Building armory = new Building("Armory", 0, "Equipping you with the best (that we've got)!", 1.15f, false,
+            new Dictionary<string, float> { { "Steel", 100f }, { "Basic Circuitry", 100f }, { "Composite Metal", 150f } },
+            new Dictionary<string, float> { { "Composite Metal", 5f }, { "Metal Scrap", 2f } },
+            new Dictionary<string, float> { { "Flak Jacket", 0.2f } });
+
+        public Building augmentationManufactory = new Building("Augmentation Manufactory", 0, "Upgrades, upgrades, upgrades!", 1.15f, false, 
+            new Dictionary<string, float> { { "Steel", 150f }, { "Basic Circuitry", 200f }, { "Microprocessors", 150f } },
+            new Dictionary<string, float> { { "Steel", 2f }, { "Composite Metal", 3.5f }, { "Microprocessors", 5f } },
+            new Dictionary<string, float> { { "Cyberwear", 0.2f } });
+
+        public Building droneFactoryCombatDrones = new Building("Drone Factory", 0, "The robots rise!", 1.15f, false,
+            new Dictionary<string, float> { { "Metal Scrap", 200f }, { "Steel", 200f }, { "Basic Circuitry", 150f } },
+            new Dictionary<string, float> { { "Drones", 1f }, { "Firearms", 1f }, { "Bullets", 5f }, { "Composite Metal", 5f }, { "Energy", 1.5f } },
+            new Dictionary<string, float> { { "Combat Drones", 0.2f } });
+
+        public Building weaponsmith = new Building("Weaponsmith", 0, "The ring of metal hitting metal; turning molten steel into weapons", 1.15f, false,
+            new Dictionary<string, float> { { "Metal Scrap", 200f }, { "Steel", 250f } },
+            new Dictionary<string, float> { { "Bullets", 20f }, { "Metal Scrap", 2f }, { "Composite Metal", 5f }, { "Energy", 0.5f } },
+            new Dictionary<string, float> { { "Firearms", 0.2f } });
+
+        public Building basicResearchBench = new Building("Basic Research Bench", 0, "TBA", 1.15f, false,
             new Dictionary<string, float> { { "Junk", 150f }, { "Rare Earth Metals", 150f }, { "Metal Scrap", 150f } },
             new Dictionary<string, float> { { "Junk", 0.5f } },
             new Dictionary<string, float> { { "Science", 0.2f } });
 
-
+        public Building droneFactoryMicrodrones = new Building("Drone Factory", 0, "The robots rise!", 1.15f, false,
+            new Dictionary<string, float> { { "Metal Scrap", 50f }, { "Steel", 25f }, { "Basic Circuitry", 15f } },
+            new Dictionary<string, float> { { "Combat Drones", 0.5f }, { "Microprocessors", 5f }, { "Composite Metal", 6f }, { "Steel", 6f } },
+            new Dictionary<string, float> { { "Microdrones", 1f } });
 
 
         // Storage Buildings
