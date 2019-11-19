@@ -11,8 +11,13 @@ namespace RisingThroughTheShadows
         public Dictionary<string, float> tempBuyDict;
         public Dictionary<string, float> tempUseDict;
         public Dictionary<string, float> tempMakeDict;
+
+
+        
+
         public class Building
         {
+
             // General building information
             public string name;
             public int amount;
@@ -72,6 +77,8 @@ namespace RisingThroughTheShadows
             }
 
         }
+
+        public List<Building> buildingList = new List<Building>();
 
         #region Buildings
         public Building metalSalvagingTable = new Building("Metal Salvaging Table", 0, "Separating the metal wheat from the rest of that weird stuff", 1.15f, false,
@@ -189,7 +196,6 @@ namespace RisingThroughTheShadows
             new Dictionary<string, float> { { "Energy", 150f } });
 
 
-
         // "Static" production
         public Building fuelGenerator = new Building("Fuel Generator", 0, "Best way to stop clutter is to burn it!", 1.15f, false,
             new Dictionary<string, float> { { "Composite MEtal", 75f }, { "Steel", 125f } },
@@ -206,8 +212,29 @@ namespace RisingThroughTheShadows
         // Use this for initialization
         void Start()
         {
+            buildingList.Add(metalSalvagingTable);
+            buildingList.Add(nutrientDispenser);
+            buildingList.Add(magicalSalvagingTable);
+            buildingList.Add(electronicsAssembly);
+            buildingList.Add(transmutationStation);
+            buildingList.Add(magicalRefinery);
+            buildingList.Add(smeltery);
+            buildingList.Add(droneFactory);
+            buildingList.Add(electronicsAssemblyMicroprocessor);
+            buildingList.Add(recycler);
+            buildingList.Add(medicalLab);
+            buildingList.Add(ammunitionMill);
+            buildingList.Add(armoryCombatKit);
+            buildingList.Add(simpleBladePress);
+            buildingList.Add(armory);
+            buildingList.Add(augmentationManufactory);
+            buildingList.Add(droneFactoryCombatDrones);
+            buildingList.Add(weaponsmith);
+            buildingList.Add(basicResearchBench);
+            buildingList.Add(droneFactoryMicrodrones);
 
             Debug.Log(metalSalvagingTable.name);
+
 
             //buildingsRegistry metalSalvage = new buildingsRegistry("Metal Salvaging Table", metalSalvagingTable);
 

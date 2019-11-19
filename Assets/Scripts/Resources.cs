@@ -28,12 +28,9 @@ namespace RisingThroughTheShadows
             {
                 return unlocked;
             }
-
-            
-           
         }
-        
 
+        public static List<Resource> resourceList = new List<Resource>();
 
         #region Resources
         // T0 resources
@@ -81,6 +78,34 @@ namespace RisingThroughTheShadows
 
         #endregion
 
-
+        void Start()
+        {
+            resourceList.Add(nuyen);
+            resourceList.Add(magicalReagents);
+            resourceList.Add(junk);
+            resourceList.Add(energy);
+            resourceList.Add(runSpeed);
+            resourceList.Add(science);
+            resourceList.Add(foodstuff);
+            resourceList.Add(metalScrap);
+            resourceList.Add(rareEarthMetals);
+            resourceList.Add(plastic);
+            resourceList.Add(explosives);
+            resourceList.Add(arcaneIngredients);
+            resourceList.Add(steel);
+            resourceList.Add(compositeMetal);
+            resourceList.Add(basicBlades);
+            resourceList.Add(basicCircuitry);
+            resourceList.Add(flakJackets);
+            resourceList.Add(medkits);
+            resourceList.Add(bullets);
+            resourceList.Add(drones);
+            resourceList.Add(microprocessors);
+            resourceList.Add(firearms);
+            resourceList.Add(cyberwear);
+            resourceList.Add(combatDrones);
+            resourceList.Add(combatKit);
+            resourceList.Add(microdrones);
+        }
     }
 }

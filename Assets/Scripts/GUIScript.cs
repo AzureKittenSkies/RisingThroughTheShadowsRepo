@@ -19,7 +19,7 @@ namespace RisingThroughTheShadows
 
         #endregion
 
-        #region Menu Bools
+        #region Menu variables
 
         public bool startMenu = true;
         public bool gameMenus = false;
@@ -31,6 +31,9 @@ namespace RisingThroughTheShadows
         public bool runsMenu;
         public bool settingsMenu;
         public bool tradeMenu;
+
+        public int tempListCounter = 0;
+        public string tempResourceString;
 
         #endregion
 
@@ -239,14 +242,16 @@ namespace RisingThroughTheShadows
                 #region Resource box
                 // Resource container
                 GUI.Box(new Rect(0, scrY * 0.75f, scrX * 2.5f, scrY * 8.25f), "Resource box");
-
-                //foreach (Resources.Resource resource in Resources.Resource)
-                //{
-                //    if (resource.amount > 0)
-                //    {
-
-                //    }
-                //}
+                tempListCounter = 0;
+                foreach (Resources.Resource resource in Resources.resourceList)
+                {
+                    tempListCounter++;
+                    if (resource.unlocked)
+                    {
+                        tempResourceString = resource.name + ": " + resource.amount + "/" + resource.resourceCap;
+                        GUI.Box(new Rect(0.25f * scrX, 0.75f * scrY + 0.75f * tempListCounter, 2f * scrX, scrY * 0.75f), tempResourceString);
+                    }
+                }
 
 
                 #endregion
