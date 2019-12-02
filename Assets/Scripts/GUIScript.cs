@@ -40,6 +40,8 @@ namespace RisingThroughTheShadows
         #region Buildings Menu
         public Vector2 scrollPos = Vector2.zero;
 
+        public ScrollView buildingsList;
+
 
         #endregion
 
@@ -359,6 +361,10 @@ namespace RisingThroughTheShadows
                     GUI.Button(new Rect(scrX * 7f, scrY * 0.75f, scrX * 2f, scrY * 0.75f), "Type 2");
                     GUI.Button(new Rect(scrX * 9.25f, scrY * 0.75f, scrX * 2f, scrY * 0.75f), "Type 3");
                     GUI.Button(new Rect(scrX * 11.5f, scrY * 0.75f, scrX * 2f, scrY * 0.75f), "Type 4");
+
+                    
+
+
 
 
 
