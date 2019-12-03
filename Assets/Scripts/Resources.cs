@@ -30,7 +30,7 @@ namespace RisingThroughTheShadows
             }
         }
 
-        public static List<Resource> resourceList = new List<Resource>();
+        public List<Resource> resourceList = new List<Resource>();
 
         #region Resources
         // T0 resources

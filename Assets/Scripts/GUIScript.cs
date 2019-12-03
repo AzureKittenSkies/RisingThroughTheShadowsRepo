@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//using System.Linq;
 
 namespace RisingThroughTheShadows
 {
@@ -40,7 +41,6 @@ namespace RisingThroughTheShadows
         #region Buildings Menu
         public Vector2 scrollPos = Vector2.zero;
 
-        public ScrollView buildingsList;
 
 
         #endregion
@@ -245,7 +245,7 @@ namespace RisingThroughTheShadows
                 // Resource container
                 GUI.Box(new Rect(0, scrY * 0.75f, scrX * 2.5f, scrY * 8.25f), "Resource box");
                 tempListCounter = 0;
-                foreach (Resources.Resource resource in Resources.resourceList)
+                foreach (Resources.Resource resource in resourceScript.resourceList)
                 {
                     tempListCounter++;
                     if (resource.unlocked)
@@ -351,8 +351,6 @@ namespace RisingThroughTheShadows
                 #region Buildings
                 if (buildingMenu)
                 {
-                    // Trying a scrollview, might be redundant with less buildings
-                    //scrollPos = GUI.BeginScrollView(new Rect(scrX * 2.5f, scrY * 0.75f, scrX * 11f, scrY * 7.5f), scrollPos, new Rect();
 
                     GUI.Box(new Rect(scrX * 2.5f, scrY * 0.75f, scrX * 11f, scrY * 0.75f), "Buildings submenu");
 
@@ -363,9 +361,29 @@ namespace RisingThroughTheShadows
                     GUI.Button(new Rect(scrX * 11.5f, scrY * 0.75f, scrX * 2f, scrY * 0.75f), "Type 4");
 
                     
+                    int i = 0;
+                    foreach (var building in buildingScript.buildingList)
+                    {
+                        if (GUI.Button(new Rect((scrX * 2.75f + (i % 2 * (scrX * 5f))), (scrY * 1.75f), scrX * 4.5f, scrY * 1f), building.name + "  x" + building.amount))
+                        {
+                            foreach (var buyResource in building.purchaseCost)
+                            {
+                                string buyResourceName = buyResource.Key;
+                                if (resourceScript.resourceList - building.purchaseCost.ContainsKey(buyResource.Key) >= 0)
+                                {
+                                    resourceScript.resourceList.name(buyResourceName).value;
+                                    building.amount++;
+                                }
+                            }
+                        }
+                        i++;
+                    }
+                    
 
-
-
+                    /*var availableBuildings = buildingScript.buildingList.Where((building, i) => 
+                        GUI.Button(new Rect((scrX * 2.75f + (i % 2 * (scrX * 5f))), (scrY * 1.75f), scrX * 4.5f, scrY * 1f), building.name + "  x" + building.amount))
+                        .Where(building => building.purchaseCost.buyResource.Key - building.purchaseCost.ContainsKey(buyResource.Key) >= 0);
+                        */
 
 
                 }
